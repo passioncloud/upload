@@ -48,7 +48,7 @@ public class FileUploadController {
 
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
-    public ResponseEntity<Resource> serverFile(@PathVariable String filename) {
+    public ResponseEntity<Resource> serverFile(@PathVariable String filename) throws StorageFileNotFoundException {
         Resource file = storageService.loadAsResource(filename);
         return ResponseEntity
                 .ok()
