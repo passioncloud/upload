@@ -79,6 +79,7 @@ public class FileSystemStorageService implements StorageService {
     public void init() {
         try {
             Files.createDirectory(rootLocation);
+            System.out.println("Root location is " + rootLocation.toAbsolutePath()); // /Users/gilbert/Projects/java/upload/upload-dir
         }
         catch (IOException e) {
             throw new StorageException("Could not initialize storage", e);
